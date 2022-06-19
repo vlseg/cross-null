@@ -40,7 +40,7 @@
 
     },
     methods: {
-      drawCrossNull(y, x, act1) {
+      drawCrossNull(y, x, act) {
         const id = `sel${y}-${x}`;
         this.visualCross = true;
         this.isToggleSign = !this.isToggleSign;
