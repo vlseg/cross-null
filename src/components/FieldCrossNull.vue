@@ -99,6 +99,8 @@
             overlap++;
             lastX = currentX + 1;
             lastY = currentY + 1;
+          } else {
+            overlap = 1;
           }
           if (overlap === numSymbol) {
             const startSellX = lastX - delta;
@@ -140,6 +142,8 @@
             overlap++;
             lastX = currentX - 1;
             lastY = currentY + 1;
+          } else {
+            overlap = 1;
           }
           if (overlap === numSymbol) {
             const startSellX = lastX + delta;
@@ -168,6 +172,8 @@
           if (this.mapSign[y][currentX] === this.mapSign[y][currentX + 1] && this.mapSign[y][currentX] !== 0) {
             overlap++;
             lastX = currentX + 1;
+          } else {
+            overlap = 1;
           }
           if (overlap === numSymbol) {
             const startSell = lastX - delta;
@@ -193,6 +199,8 @@
           if (this.mapSign[currentY][x] === this.mapSign[currentY + 1][x] && this.mapSign[currentY][x] !== 0) {
             overlap++;
             lastY = currentY + 1;
+          } else {
+            overlap = 1;
           }
           if (overlap === numSymbol) {
             const startSell = lastY - delta;
