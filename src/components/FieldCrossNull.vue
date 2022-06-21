@@ -6,7 +6,7 @@
 				v-for="y in size"
 				class="sell_vertical">
 				<div
-					:id="'sel'+y+'-'+x"
+					:id="'sel' + y + '-' + x"
 					v-for="x in size"
 					class="sell"
 					@click="drawCrossNull(y, x)"
@@ -37,7 +37,6 @@
           this.mapSign[i][j] = 0;
         }
       }
-
     },
     methods: {
       drawCrossNull(y, x, act) {
@@ -45,20 +44,20 @@
         this.visualCross = true;
         this.isToggleSign = !this.isToggleSign;
         let symbol;
+        let testSell;
         if (this.isToggleSign) {
-          document.getElementById(id).innerHTML = 'X';
-          symbol = 1
+          testSell = 'X';
+          symbol = 1;
         } else {
-          document.getElementById(id).innerHTML = '0';
-          symbol = 2
+          testSell = '0';
+          symbol = 2;
         }
+        document.getElementById(id).innerHTML = testSell;
         this.mapSign[y][x] = symbol;
         this.compareLineX(y, act);
         this.compareLineY(x, act);
         this.compareLineXY(y, x, act);
         this.compareLineYX(y, x, act);
-
-
       },
 
       line(x, y, x1, y1){
@@ -74,7 +73,7 @@
 		  },
 
       compareLineXY(y, x) {
-        // диагональная XY - \
+        // Diagonal XY - \
         let x0 = x;
         let y0 = y;
         while (x !== 1 && y !== 1) {
@@ -119,7 +118,7 @@
       },
 
       compareLineYX(y, x) {
-        // диагональная YX - /
+        // Diagonal YX - /
         let x0 = x;
         let y0 = y;
         while (x !== this.size && y !== 1) {
@@ -162,7 +161,7 @@
       },
 
       compareLineX(y) {
-        // горизонтальная
+        // horizontal
         let currentX = 1;
         let lastX = 0;
         let overlap = 1;
@@ -189,7 +188,7 @@
       },
 
       compareLineY(x) {
-        // вертикальная
+        // Vertical
         let currentY = 1;
         let lastY = 0;
         let overlap = 1;
